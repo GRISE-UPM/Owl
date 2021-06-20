@@ -11,15 +11,15 @@
     xmlns:SEDL.Hypothesis="http://moses.us.es/schemas/sedl/v1/hypothesis"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://moses.us.es/schemas/sedl/v1/ http://moses.us.es/schemas/sedl/v1/SEDL.xsd"
-    metaid="metaid0" name="name0" version="version0" id="ID000">
-    <context id="ID001">
+    metaid="META-00" name="PT-Experiment" version="V-0" id="ID-0">
+    <context id="Tartu-context">
         <people>
             <person address="" email="" id="OD0001" name="Oscar" role="Subject"/>
         </people>
     </context>
     <hypothesis xsi:type="SEDL.Hypothesis:DifferentialHypothesis"
         independentVariables="STRATEGY"
-        dependentVariable="QLTY" id="ID002"> </hypothesis>
+        dependentVariable="QLTY" id="H-1"> </hypothesis>
     <design>
         <variables>
             <variable xsi:type="SEDL.Design:AttributeIndependentVariable" kind="Nominal"
@@ -40,14 +40,11 @@
         <samplingMethod description="description0" random="false"/>
         <experimentalDesign xsi:type="SEDL.Design:FullySpecifiedExperimentalDesign">
             <intendedAnalyses/> 
-            <assignmentMethod description="description1" random="true"/>
+            <assignmentMethod description="Fully randomized" random="true"/>
             <groups name="G1">
                 <sizing/>
             </groups>
             <groups name="G2">
-                <sizing/>
-            </groups>
-            <groups name="G3">
                 <sizing/>
             </groups>
             <experimentalProtocol>
@@ -56,4 +53,27 @@
             </experimentalProtocol>
         </experimentalDesign>
     </design>
+    <configurations id="Tartu-configuration">
+        <experimentalProcedure>
+            <tasks xsi:type="SEDL.Configuration:CommandExperimentalTask" name="Session-1" path="To-Be-Defined"/>
+        </experimentalProcedure>
+        <experimentalSetting>
+            <requirements/>
+        </experimentalSetting>
+        <experimentalInputs>
+            <inputDataSources>
+                <file name="MR-Task-Description" path="https://github.com/GRISE-UPM/TDDCodeStubsForExperiments/raw/master/MarsRover/MR%20-%20no%20sliced.pdf"/>
+                <features variable="STARATEGY" level="ITLD"/>
+                <features variable="STARATEGY" level="TDD"/>
+            </inputDataSources>
+            <inputDataSources>
+                <file name="MR-Code" path="https://raw.githubusercontent.com/GRISE-UPM/TDDCodeStubsForExperiments/master/MarsRover/src/es/upm/grise/MarsRover.java"/>
+                <features variable="STARATEGY" level="ITLD"/>
+                <features variable="STARATEGY" level="TDD"/>
+            </inputDataSources>
+        </experimentalInputs>
+        <experimentalOutputs>
+            <outputDataSources role="MainResult"/>
+        </experimentalOutputs>
+    </configurations>
 </SEDL:BasicExperiment>

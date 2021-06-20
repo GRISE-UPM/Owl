@@ -2,12 +2,13 @@ package es.upm.grise.owl.plugin;
 
 import org.basex.core.*;
 import org.basex.core.cmd.*;
-import org.basex.query.*;
 
 @Owlo
 class User implements Plugin {
 
-	public User() {}
+	public User() {
+		// I guess we could do checks here
+	}
 
 	static Context context = new Context();
 
