@@ -20,10 +20,10 @@ class Instrument implements Plugin {
 			
 				case "list"   : 
 					switch (action[1]) {
-						case "task"		: query = "for $x in doc('resources/xml/SEDL-instance.xml')//tasks return json:serialize($x, map { 'format': 'jsonml' })";
+						case "tasks"		: query = "for $x in doc('resources/xml/SEDL-instance.xml')//tasks return json:serialize($x, map { 'format': 'jsonml' })";
 										  System.out.println(new XQuery(query).execute(context));
 										  break;
-						case "file"		: break;
+						case "files"		: break;
 						default			: // Error message
 										  break;
 					}
